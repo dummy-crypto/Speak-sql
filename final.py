@@ -5,13 +5,10 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import pandasql as ps
 
-# Set the PATH for ffmpeg
-os.environ['PATH'] += os.pathsep + r'C:\jcffmpeg\bin'
-
 # Set the page configuration
 st.set_page_config(page_title="SQL Query Retrieval App", layout="centered")
 
-# Custom CSS for a fancy background
+# Custom CSS for a fancy background and styling
 st.markdown(
     """
     <style>
@@ -19,16 +16,42 @@ st.markdown(
         background-image: url('https://www.example.com/background.jpg');
         background-size: cover;
         background-attachment: fixed;
+        font-family: Arial, sans-serif;  /* Change the font for better readability */
     }
     .stApp {
-        background: rgba(255, 255, 255, 0.8);  /* Increases opacity to reduce blur effect */
+        background: rgba(255, 255, 255, 0.95);  /* Adjusted opacity for readability */
         padding: 2rem;
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    h1, h2, h3, h4, h5, h6 {
-        color: #333333;  /* Sets a darker color for headers */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);  /* Adds a subtle text shadow for clarity */
+    h1 {
+        color: #333333;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        font-size: 2.5rem;  /* Larger font size for title */
+        text-align: center;  /* Center align the title */
+        margin-bottom: 1.5rem;  /* Add margin for spacing */
+    }
+    h2 {
+        color: #4CAF50;  /* Green color for section headers */
+        font-size: 1.8rem;  /* Slightly larger font for section headers */
+        margin-top: 2rem;  /* Add top margin for separation */
+        margin-bottom: 1rem;  /* Add bottom margin for spacing */
+    }
+    .btn-primary {
+        background-color: #4CAF50;  /* Green background for primary button */
+        color: white;  /* White text for contrast */
+        padding: 0.8rem 1.2rem;  /* Padding adjustment for button size */
+        font-size: 1rem;  /* Adjust font size */
+        border-radius: 8px;  /* Rounded corners */
+        transition: background-color 0.3s ease;  /* Smooth transition */
+    }
+    .btn-primary:hover {
+        background-color: #45A049;  /* Darker shade on hover */
+    }
+    .stTextInput {
+        background-color: #f2f2f2;  /* Light gray background for text input */
+        padding: 0.6rem;  /* Adjust padding for input field */
+        border-radius: 8px;  /* Rounded corners */
     }
     </style>
     """,
@@ -47,7 +70,6 @@ if 'df' not in st.session_state:
 
 if 'df_name' not in st.session_state:
     st.session_state.df_name = ""
-
 
 
 # Configure GenAI key
@@ -81,11 +103,8 @@ if uploaded_file is not None:
     st.write("Data Preview:")
     st.dataframe(st.session_state.df.head())
 
-    # Audio recording section
-    
-    
-    
-    transcription = st.text_area("Type your Question", value=st.session_state.transcription, height=100)
+    # Question input section
+    transcription = st.text_area("Type your Question", value=st.session_state.transcription, height=100, class="stTextInput")
 
     df = st.session_state.df
     df_name = st.session_state.df_name
@@ -108,7 +127,7 @@ if uploaded_file is not None:
         """
     ]
 
-    if st.button("Get SQL Query"):
+    if st.button("Get SQL Query", class="btn-primary"):
         with st.spinner("Generating SQL query..."):
             response = get_gemini_response(transcription, prompt)
             st.success("SQL query generated!")
