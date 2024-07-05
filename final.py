@@ -93,7 +93,7 @@ if uploaded_file is not None:
         """
     ]
 
-    if st.button("Get SQL Query"):
+    if st.button("Get SQL Query", key = "sqlquery"):
         with st.spinner("Generating SQL query..."):
             response = get_gemini_response(transcription, prompt)
             st.success("SQL query generated!")
