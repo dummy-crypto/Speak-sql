@@ -1,0 +1,43 @@
+
+    body {
+        background-image: url('https://www.example.com/background.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;  /* Change the font for better readability */
+    }
+    .stApp {
+        background: rgba(255, 255, 255, 0.95);  /* Adjusted opacity for readability */
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+        color: #333333;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        font-size: 2.5rem;  /* Larger font size for title */
+        text-align: center;  /* Center align the title */
+        margin-bottom: 1.5rem;  /* Add margin for spacing */
+    }
+    h2 {
+        color: #4CAF50;  /* Green color for section headers */
+        font-size: 1.8rem;  /* Slightly larger font for section headers */
+        margin-top: 2rem;  /* Add top margin for separation */
+        margin-bottom: 1rem;  /* Add bottom margin for spacing */
+    }
+    .btn-primary {
+        background-color: #4CAF50;  /* Green background for primary button */
+        color: white;  /* White text for contrast */
+        padding: 0.8rem 1.2rem;  /* Padding adjustment for button size */
+        font-size: 1rem;  /* Adjust font size */
+        border-radius: 8px;  /* Rounded corners */
+        transition: background-color 0.3s ease;  /* Smooth transition */
+    }
+    .btn-primary:hover {
+        background-color: #45A049;  /* Darker shade on hover */
+    }
+    .stTextInput {
+        background-color: #f2f2f2;  /* Light gray background for text input */
+        padding: 0.6rem;  /* Adjust padding for input field */
+        border-radius: 8px;  /* Rounded corners */
+    }
+    
