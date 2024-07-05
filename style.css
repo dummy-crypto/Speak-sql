@@ -13,16 +13,25 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     
-    .sqlquery {
-        background-color: #4CAF50;  /* Green background for primary button */
-        color: white;  /* White text for contrast */
-        padding: 0.8rem 1.2rem;  /* Padding adjustment for button size */
-        font-size: 1rem;  /* Adjust font size */
-        border-radius: 8px;  /* Rounded corners */
-        transition: background-color 0.3s ease;  /* Smooth transition */
+    .record-button {
+        background-color: #ff4757;  /* Initial background color */
+        color: white;  /* Text color */
+        border: none;  /* Remove default border */
+        padding: 10px 20px;  /* Padding for the button */
+        text-align: center;  /* Center text */
+        text-decoration: none;  /* Remove underline */
+        display: inline-block;  /* Display as inline-block */
+        font-size: 16px;  /* Font size */
+        margin: 4px 2px;  /* Margin */
+        cursor: pointer;  /* Pointer cursor on hover */
+        border-radius: 12px;  /* Rounded corners */
+        transition: background-color 0.3s, box-shadow 0.3s;  /* Smooth transitions */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Initial shadow */
     }
-    .btn-primary:hover {
-        background-color: #45A049;  /* Darker shade on hover */
+    
+    .record-button:hover {
+        background-color: #e84118;  /* Background color on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* Shadow on hover */
     }
     .stTextInput {
         background-color: #f2f2f2;  /* Light gray background for text input */
