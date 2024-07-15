@@ -8,6 +8,7 @@ Try the project : [ https://lnkd.in/ecJxqShg
 
 Applications:
 📊 Business Intelligence: Quickly extract insights from large datasets
+
 📈 Data Analysis: Simplify querying and analyzing data for non-technical team members
 
 Tech Stack used:
