@@ -7,6 +7,7 @@ Try the project : [ https://lnkd.in/ecJxqShg
 ](https://textsql-analysis.streamlit.app/)
 
 Applications:
+
 📊 Business Intelligence: Quickly extract insights from large datasets
 
 📈 Data Analysis: Simplify querying and analyzing data for non-technical team members
